@@ -27,6 +27,16 @@
     ajax.send(null);
     // open,sendはメソッド、responseTypeはプロパティ
     // ajax.send(null); 特にデータを送ることがなく、データを受け取るだけなので、nullを設定する。
+
+    ajax.onreadystatechange = function () {
+      if (ajax.readyState === XMLHttpRequest.DONE && ajax.status === 200) {
+        for (var i = 0; i < this.response.length; i++) {
+          alert(this.response[i].path);
+        }
+      }
+    };
+
+    // &&は論理演算氏と呼ばれ、複数の条件を重ねてif構文で指定することができる。
   </script>
 
 </body>

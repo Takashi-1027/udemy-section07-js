@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <title>My Photos</title>
+</head>
+
+<body>
+  <header>
+    <h1>My Photos</h1>
+  </header>
+
+  <div class="container">
+    <div id="img_unit">
+      <div class="photo">
+        <img src="img/img01.jpg">
+        <div class="inner">
+          <p>コメント1<span>nickname</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var images = [
+      {
+        "path": "img/img01.jpg",
+        "name": "name01",
+        "caption": "コメント1"
+      },
+      {
+        "path": "img/img02.jpg",
+        "name": "name02",
+        "caption": "コメント2"
+      }
+    ];
+
+    // alert(images[0].caption) //alertはwindowsオブジェクトのメソッド
+
+    var pref = ['北海道', '青森県', '岩手県'];
+    alert(pref[0]);
+
+    /*
+    配列の書き方は他にもあり var pref = new Array('北海道', '青森県', '岩手県');
+    という書き方があるが、基本的にはこの書き方はあまり使わない。　
+    */
+    
+    /*
+    alert(pref[0]); の[]は、配列名(ここではprefのこと)の後に[](ブラケットという)を入れ、
+    その中に数字を入れる。この数字のことを添え字(インデックス)と呼ぶ。
+    配列の中の北海道を0、青森県を1、岩手県を2と順番に数えていく。
+    配列の中では最初の値から0。1、2・・・というように順番に数えていく。
+    */ 
+  </script>
+
+</body>
+
+</html>

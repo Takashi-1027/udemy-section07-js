@@ -17,12 +17,6 @@
 
   <div class="container">
     <div id="img_unit">
-      <div class="photo">
-        <img src="img/img01.jpg">
-        <div class="inner">
-          <p>コメント1<span>nickname</span></p>
-        </div>
-      </div>
     </div>
   </div>
 
@@ -40,22 +34,28 @@
       }
     ];
 
-    // alert(images[0].caption) //alertはwindowsオブジェクトのメソッド
+    var img;
+    var caption;
+    var div;
+    img = document.createElement('img');
+    img.setAttribute('src', images[0].path);
 
-    var pref = ['北海道', '青森県', '岩手県'];
-    alert(pref[0]);
+    // 上記のの書き方をすると下記の様になる
+    //<img srv="img/img01.jpg">
 
-    /*
-    配列の書き方は他にもあり var pref = new Array('北海道', '青森県', '岩手県');
-    という書き方があるが、基本的にはこの書き方はあまり使わない。　
-    */
-    
-    /*
-    alert(pref[0]); の[]は、配列名(ここではprefのこと)の後に[](ブラケットという)を入れ、
-    その中に数字を入れる。この数字のことを添え字(インデックス)と呼ぶ。
-    配列の中の北海道を0、青森県を1、岩手県を2と順番に数えていく。
-    配列の中では最初の値から0。1、2・・・というように順番に数えていく。
-    */ 
+    caption = document.createElement('div');
+    caption.className = 'inner';
+    caption.innerHTML = '<p>' + images[0].caption + '<span>' + images[0].name + '</span></p>';
+
+    div = document.createElement('div');
+    div.className = 'photo';
+    div.appendChild(img);
+    div.appendChild(caption);
+
+    document.getElementById('img_unit').appendChild(div);
+
+    // appendChildと子どもの要素を追加するという意味
+
   </script>
 
 </body>
